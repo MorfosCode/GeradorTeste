@@ -238,6 +238,7 @@
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "TelaPrincipalForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerador de Testes";
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();

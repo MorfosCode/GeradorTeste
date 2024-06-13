@@ -28,92 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGravar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtDisciplina = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            btnCancelar = new Button();
+            btnGravar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            txtId = new TextBox();
+            txtDisciplina = new TextBox();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(319, 134);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(72, 39);
-            this.btnCancelar.TabIndex = 30;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(319, 134);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(72, 39);
+            btnCancelar.TabIndex = 30;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnGravar
             // 
-            this.btnGravar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGravar.Location = new System.Drawing.Point(238, 134);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(72, 39);
-            this.btnGravar.TabIndex = 29;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.UseVisualStyleBackColor = true;
-            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            btnGravar.DialogResult = DialogResult.OK;
+            btnGravar.Location = new Point(238, 134);
+            btnGravar.Name = "btnGravar";
+            btnGravar.Size = new Size(72, 39);
+            btnGravar.TabIndex = 29;
+            btnGravar.Text = "Gravar";
+            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 15);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Id:";
-          
+            label1.AutoSize = true;
+            label1.Location = new Point(53, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(20, 15);
+            label1.TabIndex = 31;
+            label1.Text = "Id:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Disciplina:";
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 82);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 15);
+            label2.TabIndex = 32;
+            label2.Text = "Disciplina:";
             // 
             // txtId
             // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(88, 33);
-            this.txtId.Name = "txtId";
-            this.txtId.ShortcutsEnabled = false;
-            this.txtId.Size = new System.Drawing.Size(49, 23);
-            this.txtId.TabIndex = 33;
+            txtId.Enabled = false;
+            txtId.Location = new Point(88, 33);
+            txtId.Name = "txtId";
+            txtId.ShortcutsEnabled = false;
+            txtId.Size = new Size(49, 23);
+            txtId.TabIndex = 33;
             // 
             // txtDisciplina
             // 
-            this.txtDisciplina.Location = new System.Drawing.Point(88, 79);
-            this.txtDisciplina.Name = "txtDisciplina";
-            this.txtDisciplina.Size = new System.Drawing.Size(303, 23);
-            this.txtDisciplina.TabIndex = 34;
+            txtDisciplina.Location = new Point(88, 79);
+            txtDisciplina.Name = "txtDisciplina";
+            txtDisciplina.Size = new Size(303, 23);
+            txtDisciplina.TabIndex = 34;
             // 
             // TelaCadastroDisciplinaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 186);
-            this.Controls.Add(this.txtDisciplina);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGravar);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "TelaCadastroDisciplinaForm";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cadastro Disciplina";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(403, 186);
+            Controls.Add(txtDisciplina);
+            Controls.Add(txtId);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnGravar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "TelaCadastroDisciplinaForm";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadastro Disciplina";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
