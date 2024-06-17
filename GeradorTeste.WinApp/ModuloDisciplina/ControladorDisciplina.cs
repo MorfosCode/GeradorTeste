@@ -1,7 +1,7 @@
 ﻿using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp;
 using GeradorTeste.WinApp.Compartilhado;
-using GeradorTeste.WinApp.ModuloDiciplina;
+using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinForms.ModuloDisciplina;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
 {
     public class ControladorDisciplina : ControladorBase
     {
-        private readonly IRepositorioDisciplina repositorioDisciplina;
+        private IRepositorioDisciplina repositorioDisciplina;
         private TabelaDisciplinaControl tabelaDisciplina;
 
         public ControladorDisciplina(IRepositorioDisciplina repositorioDisciplina)
@@ -100,7 +100,7 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
               "Confirmar Exclusão",
               MessageBoxButtons.YesNo,
               MessageBoxIcon.Warning
-          );
+             );
 
             if (resposta != DialogResult.Yes)
                 return;
@@ -134,12 +134,7 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
            
             tabelaDisciplina.AtualizarRegistros(disciplinas);
         }
-        public int ContarRegistros()
-        {
-            List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
-
-            return disciplinas.Count();
-        }
+       
 
     }
 }

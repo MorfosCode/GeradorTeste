@@ -1,6 +1,6 @@
-﻿namespace GeradorTeste.WinApp.ModuloDisciplina
+﻿namespace GeradorTeste.WinApp.ModuloMateria
 {
-    partial class TabelaDisciplinaControl
+    partial class TabelaMateriaControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,16 +38,15 @@
             grid.Dock = DockStyle.Fill;
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
-            grid.Size = new Size(318, 305);
+            grid.Size = new Size(150, 150);
             grid.TabIndex = 0;
             // 
-            // TabelaDisciplinaControl
+            // TabelaMateriaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
-            Name = "TabelaDisciplinaControl";
-            Size = new Size(318, 305);
+            Name = "TabelaMateriaControl";
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

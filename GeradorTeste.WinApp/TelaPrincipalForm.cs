@@ -1,6 +1,7 @@
 using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloDisciplina;
+using GeradorTeste.WinApp.ModuloMateria;
 
 namespace GeradorTeste.WinApp
 {
@@ -9,6 +10,7 @@ namespace GeradorTeste.WinApp
         ControladorBase controlador;
 
         IRepositorioDisciplina repositorioDisciplina;
+        IRepositorioMateria repositorioMateria;
 
         public static TelaPrincipalForm Instancia { get; private set; }
         public TelaPrincipalForm()
@@ -19,6 +21,7 @@ namespace GeradorTeste.WinApp
             Instancia = this;
 
             repositorioDisciplina = new RepositorioDisciplinaEmArquivos();
+            repositorioMateria = new RepositorioMateriaEmArquivo();       
         }
 
         public void AtualizarRodape(string texto)
@@ -62,14 +65,6 @@ namespace GeradorTeste.WinApp
         }
 
 
-        private void disciplinaMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorDisciplina(repositorioDisciplina);
-
-            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
-
-            ConfigurarTelaPrincipal(controlador);
-        }
 
         private void btnAdicionar_Click_1(object sender, EventArgs e)
         {
@@ -84,6 +79,23 @@ namespace GeradorTeste.WinApp
         private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             controlador.Excluir();
+        }
+        private void disciplinaMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorDisciplina(repositorioDisciplina);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+        private void materiaMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+
         }
     }
 }
