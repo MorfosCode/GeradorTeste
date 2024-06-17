@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace GeradorTeste.WinForms.ModuloDisciplina
 {
-    public partial class TelaCadastroDisciplinaForm : Form
+    public partial class TelaCadastroQuestao : Form
     {
-        public TelaCadastroDisciplinaForm()
+        public TelaCadastroQuestao()
         {
             InitializeComponent();
         }

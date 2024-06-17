@@ -34,6 +34,7 @@
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             disciplinaMenuItem = new ToolStripMenuItem();
             materiaMenuItem = new ToolStripMenuItem();
+            questãoMenuItem = new ToolStripMenuItem();
             pnlRegistros = new Panel();
             toolStrip1 = new ToolStrip();
             btnAdicionar = new ToolStripButton();
@@ -59,16 +60,17 @@
             statusStrip1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { statusLabelPrincipal });
-            statusStrip1.Location = new Point(0, 425);
+            statusStrip1.Location = new Point(0, 569);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 25);
+            statusStrip1.Padding = new Padding(1, 0, 16, 0);
+            statusStrip1.Size = new Size(914, 31);
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
             // 
             // statusLabelPrincipal
             // 
             statusLabelPrincipal.Name = "statusLabelPrincipal";
-            statusLabelPrincipal.Size = new Size(185, 20);
+            statusLabelPrincipal.Size = new Size(237, 25);
             statusLabelPrincipal.Text = "Visualizando 0 registro(s)...";
             // 
             // menuStrip1
@@ -78,7 +80,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(914, 35);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -86,13 +89,13 @@
             // 
             cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { disciplinaMenuItem, materiaMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(86, 24);
+            cadastrosToolStripMenuItem.Size = new Size(109, 29);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
-            disciplinaMenuItem.Size = new Size(143, 24);
+            disciplinaMenuItem.Size = new Size(224, 30);
             disciplinaMenuItem.Text = "Disciplina";
             disciplinaMenuItem.Click += disciplinaMenuItem_Click;
             // 
@@ -103,9 +106,17 @@
             materiaMenuItem.Text = "Materia";
             materiaMenuItem.Click += materiaMenuItem_Click;
             // 
+            // questãoMenuItem
+            // 
+            questãoMenuItem.Name = "questãoMenuItem";
+            questãoMenuItem.Size = new Size(224, 30);
+            questãoMenuItem.Text = "Questão";
+            questãoMenuItem.Click += questaoMenuItem_Click;
+            // 
             // pnlRegistros
             // 
-            pnlRegistros.Location = new Point(0, 64);
+            pnlRegistros.Location = new Point(0, 85);
+            pnlRegistros.Margin = new Padding(3, 4, 3, 4);
             pnlRegistros.Name = "pnlRegistros";
             pnlRegistros.Size = new Size(800, 358);
             pnlRegistros.TabIndex = 7;
@@ -116,7 +127,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnFiltrar, toolStripSeparator3, btnVisualizarMaterias, toolStripSeparator2, btnPdf, btnDuplicaar, btnGabarito, toolStripSeparator4, lblTipoCadastro });
             toolStrip1.Location = new Point(0, 28);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 41);
+            toolStrip1.Size = new Size(914, 41);
             toolStrip1.TabIndex = 8;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -240,9 +251,9 @@
             // 
             // TelaPrincipalForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(toolStrip1);
             Controls.Add(pnlRegistros);
             Controls.Add(statusStrip1);
@@ -286,5 +297,6 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton btnPdf;
         private ToolStripButton btnGabarito;
+        private ToolStripMenuItem questãoMenuItem;
     }
 }
