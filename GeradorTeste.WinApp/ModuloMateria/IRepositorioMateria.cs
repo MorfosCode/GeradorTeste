@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace GeradorTeste.WinApp.ModuloMateria
 {
-    public interface IRepositoriMateria
+    public interface IRepositorioMateria
     {
 
         void Cadastrar(Materia novaMateria);
 
         void CadastrarVarios(List<Materia> materias);
 
-        bool Editar(int id, Materia materiaEditado);
+        bool Editar(int id, Materia materiaEditada);
         bool Excluir(int id);
 
         Materia SelecionarPorId(int idSelecionado);

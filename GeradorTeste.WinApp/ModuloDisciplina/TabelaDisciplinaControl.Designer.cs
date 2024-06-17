@@ -1,4 +1,4 @@
-﻿namespace GeradorTeste.WinApp.ModuloDiciplina
+﻿namespace GeradorTeste.WinApp.ModuloDisciplina
 {
     partial class TabelaDisciplinaControl
     {

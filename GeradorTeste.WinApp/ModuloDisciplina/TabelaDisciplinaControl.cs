@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.Compartilhado;
 
-namespace GeradorTeste.WinApp.ModuloDiciplina
+namespace GeradorTeste.WinApp.ModuloDisciplina
 {
     public partial class TabelaDisciplinaControl : UserControl
     {

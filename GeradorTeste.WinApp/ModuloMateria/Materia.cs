@@ -8,20 +8,23 @@ using System.Threading.Tasks;
 
 namespace GeradorTeste.WinApp.ModuloMateria
 {
-    public  class Materia : EntidadeBase
+    public class Materia : EntidadeBase
     {
-        public Materia(string nome, List<Disciplina> disciplina, string serie)
+        public string NomeMateria { get; set; }
+
+        public Disciplina Disciplina { get; set; } 
+
+        public string Serie { get; set; }
+
+        public Materia()
         {
-            NomeMateria = nome;
+        }
+        public Materia(string nomeMateria, Disciplina disciplina, string serie)
+        {
+            NomeMateria = nomeMateria;
             Disciplina = disciplina;
             Serie = serie;
         }
-
-        public string NomeMateria { get; set; }
-
-        public List <Disciplina> Disciplina { get; set; }
-
-        public string Serie { get; set; }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
@@ -37,9 +40,18 @@ namespace GeradorTeste.WinApp.ModuloMateria
             List<string> erros = new List<string>();
 
             if (string.IsNullOrEmpty(NomeMateria.Trim()))
-                erros.Add("O campo \"DISCIPLINA\" é obrigatório");
+                erros.Add("O campo \"Nome\" é obrigatório");
+           
+
+            if (string.IsNullOrEmpty(Serie.Trim()))
+                erros.Add("O checkbox \"Série\" é obrigatório");
 
             return erros;
+        }
+
+        public override string ToString()
+        {
+            return $"{{NomeMateria}} {{Serie}}, {{Disciplina}}";
         }
     }
 }

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace GeradorTeste.WinApp.ModuloMateria
 {
-    public class RepositorioMateriaEmArquivo : RepositorioBaseEmArquivo<Materia>, IRepositoriMateria
+    public class RepositorioMateriaEmArquivo : RepositorioBaseEmArquivo<Materia>, IRepositorioMateria
     {
-        public RepositorioMateriaEmArquivo() : base("Materia.json")
+        public RepositorioMateriaEmArquivo() : base("materias.json")
         {
         }
+       
     }
 }
