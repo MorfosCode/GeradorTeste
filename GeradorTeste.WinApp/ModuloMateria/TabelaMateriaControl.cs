@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GeradorTeste.ModuloDisciplina;
+using GeradorTeste.WinApp.Compartilhado;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,32 +9,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GeradorTeste.ModuloDisciplina;
-using GeradorTeste.WinApp.Compartilhado;
 
-namespace GeradorTeste.WinApp.ModuloDisciplina
+namespace GeradorTeste.WinApp.ModuloMateria
 {
-    public partial class TabelaDisciplinaControl : UserControl
+    public partial class TabelaMateriaControl : UserControl
     {
-        public TabelaDisciplinaControl()
+        public TabelaMateriaControl()
         {
             InitializeComponent();
 
             grid.Columns.AddRange(obterColunas());
             grid.ConfigurarGridSomenteLeitura();
             grid.ConfigurarGridZebrado();
-
         }
 
-        public void AtualizarRegistros(List<Disciplina> disciplinas)
+        public void AtualizarRegistros(List<Materia> materias)
         {
             grid.Rows.Clear();
-            foreach (Disciplina disciplina in disciplinas)
+            foreach (Materia materia in materias)
                 grid.Rows.Add
                 (
-                    disciplina.Id,
-                    disciplina.Nome
-                  
+                    materia.Id,
+                    materia.NomeMateria,
+                    materia.Disciplina,
+                    materia.Serie
 
                 );
         }
@@ -46,8 +46,10 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
             return new DataGridViewColumn[]
             {
                 new DataGridViewTextBoxColumn{ DataPropertyName = "Id", HeaderText = "ID" },
-                new DataGridViewTextBoxColumn{ DataPropertyName = "Disciplina", HeaderText = "Disciplina" },
-              
+                 new DataGridViewTextBoxColumn{ DataPropertyName = "materia", HeaderText = "Materia" },
+                new DataGridViewTextBoxColumn{ DataPropertyName = "Disciplina", HeaderText = "Disciplina" }, 
+                new DataGridViewTextBoxColumn{ DataPropertyName = "serie", HeaderText = "Serie" },
+
             };
         }
     }

@@ -38,5 +38,10 @@ namespace GeradorTeste.ModuloDisciplina
 
             return erros;
         }
+
+        public override string ToString()
+        {
+            return $"{Nome} ";
+        }
     }
 }
