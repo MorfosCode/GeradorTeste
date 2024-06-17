@@ -32,7 +32,7 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
 
         public override void Adicionar()
         {
-            TelaCadastroDisciplinaForm telaCadastro = new TelaCadastroDisciplinaForm();
+            TelaCadastroQuestao telaCadastro = new TelaCadastroQuestao();
             DialogResult resultado = telaCadastro.ShowDialog();
 
             if (resultado != DialogResult.OK)
@@ -51,7 +51,7 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
 
         public override void Editar()
         {
-            TelaCadastroDisciplinaForm telaCadastro = new TelaCadastroDisciplinaForm();
+            TelaCadastroQuestao telaCadastro = new TelaCadastroQuestao();
 
             int idSelecionado = tabelaDisciplina.ObterRegistroSelecionado();
 

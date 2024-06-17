@@ -1,6 +1,6 @@
 ﻿namespace GeradorTeste.WinForms.ModuloDisciplina
 {
-    partial class TelaCadastroDisciplinaForm
+    partial class TelaCadastroQuestao
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             txtDisciplina.Size = new Size(303, 23);
             txtDisciplina.TabIndex = 34;
             // 
-            // TelaCadastroDisciplinaForm
+            // TelaCadastroQuestao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -106,7 +106,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "TelaCadastroDisciplinaForm";
+            Name = "TelaCadastroQuestao";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
