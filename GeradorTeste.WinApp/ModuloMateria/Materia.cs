@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GeradorTeste.ModuloDisciplina;
+using GeradorTeste.WinApp.Compartilhado;
 
 namespace GeradorTeste.WinApp.ModuloMateria
 {
@@ -12,18 +14,20 @@ namespace GeradorTeste.WinApp.ModuloMateria
     {
         public string NomeMateria { get; set; }
 
-        public Disciplina Disciplina { get; set; } 
-
+        public Disciplina Disciplina { get; set; }
+        public string Nome { get; set; }
         public string Serie { get; set; }
 
         public Materia()
         {
+            
         }
-        public Materia(string nomeMateria, Disciplina disciplina, string serie)
+
+        public Materia(Disciplina disciplina, string nome, string serie)
         {
-            NomeMateria = nomeMateria;
-            Disciplina = disciplina;
-            Serie = serie;
+            this.Disciplina = disciplina;
+            this.Nome = nome;
+            this.Serie = serie;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)

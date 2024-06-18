@@ -2,6 +2,7 @@ using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloMateria;
+using GeradorTeste.WinApp.ModuloCadastrarQuestao;
 
 namespace GeradorTeste.WinApp
 {
@@ -11,6 +12,7 @@ namespace GeradorTeste.WinApp
 
         IRepositorioDisciplina repositorioDisciplina;
         IRepositorioMateria repositorioMateria;
+        IRepositorioQuestao repositorioQuestao;
 
         public static TelaPrincipalForm Instancia { get; private set; }
         public TelaPrincipalForm()
@@ -22,6 +24,7 @@ namespace GeradorTeste.WinApp
 
             repositorioDisciplina = new RepositorioDisciplinaEmArquivos();
             repositorioMateria = new RepositorioMateriaEmArquivo();       
+            repositorioQuestao = new RepositorioQuestaoEmArquivo();
         }
 
         public void AtualizarRodape(string texto)
@@ -65,6 +68,20 @@ namespace GeradorTeste.WinApp
         }
 
 
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void questaoMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorQuestao(repositorioQuestao);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+        }
 
         private void btnAdicionar_Click_1(object sender, EventArgs e)
         {

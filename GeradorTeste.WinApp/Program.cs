@@ -1,3 +1,5 @@
+using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+
 namespace GeradorTeste.WinApp
 {
     internal static class Program
