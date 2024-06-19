@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloTestes.ModuloPDF;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {
-    public class ControladorTeste : ControladorBase
+    public class ControladorTeste : ControladorBase, IControladorPDF
     {
         IRepositorioTeste repositorioTeste;
         private TabelaTesteControl tabelaTeste;
@@ -27,6 +28,8 @@ namespace GeradorTeste.WinApp.ModuloTestes
         public override string ToolTipEditar { get { return "Editar Teste"; } }
 
         public override string ToolTipExcluir { get { return "Excluir Teste"; } }
+
+        public string ToolTipGerarPDF => "Gerar PDF de Teste";
 
         #endregion
 
@@ -118,6 +121,33 @@ namespace GeradorTeste.WinApp.ModuloTestes
         }
         #endregion
 
+        public void PDF()
+        {
+            TelaPdfForm telaTeste = new TelaPdfForm();
+          
+
+
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado = repositorioTeste.SelecionarPorId(idSelecionado);
+
+            if (testeSelecionado == null)
+            {
+                MessageBox.Show("Por favor selecione um registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            telaTeste.Teste = testeSelecionado;
+
+            
+            CarregarTestes();
+
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O PDF do registro \"{testeSelecionado}\" foi gerado com sucesso!");
+            
+        }
+
         #region Obtem listagem de testes nos registro
         public override UserControl ObterListagem()
         {
@@ -130,6 +160,9 @@ namespace GeradorTeste.WinApp.ModuloTestes
         }
         #endregion
 
+
+
+
         #region Carrega testes
         private void CarregarTestes()
         {
@@ -137,5 +170,8 @@ namespace GeradorTeste.WinApp.ModuloTestes
             tabelaTeste.AtualizarRegistros(testes);
         }
         #endregion
+   
+    
+    
     }
 }

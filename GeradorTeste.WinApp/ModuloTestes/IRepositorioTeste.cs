@@ -7,7 +7,7 @@ using GeradorTeste.WinApp.ModuloCadastrarQuestao;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {
-    public interface IRepositorioTeste
+    public interface IRepositorioTeste 
     {
         void Cadastrar(Teste novoTeste);
 
@@ -20,5 +20,7 @@ namespace GeradorTeste.WinApp.ModuloTestes
         Teste SelecionarPorId(int idSelecionado);
 
         List<Teste> SelecionarTodos();
+
+  
     }
 }

@@ -11,6 +11,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using System.Drawing.Design;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace GeradorTeste.WinApp.ModuloTestes.ModuloPDF
@@ -20,6 +21,27 @@ namespace GeradorTeste.WinApp.ModuloTestes.ModuloPDF
         public TelaPdfForm()
         {
             InitializeComponent();
+        }
+
+        private Teste teste;
+
+        public Teste Teste
+        {
+            get
+            {
+                return teste;
+            }
+            set
+            {
+               
+                labelTitulo.Text = value.Titulo;
+              labelDisciplina.Text = value.Disciplina.Nome;
+               labelMateria.Text = value.Materia.NomeMateria + ", " + value.Materia.Serie;
+               
+
+
+                listQuestoes.Items.AddRange(value.Questoes.ToArray());
+            }
         }
 
         private void btnGerarPdf_Click(object sender, EventArgs e)

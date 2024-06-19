@@ -60,5 +60,11 @@ namespace GeradorTeste.WinApp.ModuloTestes
             return erros;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return $"{Titulo}";
+        }
+
     }
 }

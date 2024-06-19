@@ -58,7 +58,7 @@ namespace GeradorTeste.WinApp
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
-
+            btnPdf.Enabled = controladorSelecionado is IControladorPDF;
             ConfigurarToolTips(controladorSelecionado);
         }
 
@@ -68,14 +68,13 @@ namespace GeradorTeste.WinApp
             btnEditar.ToolTipText = controladorSelecionado.ToolTipEditar;
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
 
+            if (controladorSelecionado is IControladorPDF controladorPDF)
+                btnPdf.ToolTipText = controladorPDF.ToolTipGerarPDF;
+
         }
 
 
 
-            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
-
-            ConfigurarTelaPrincipal(controlador);
-        }
 
         private void questaoMenuItem_Click(object sender, EventArgs e)
         {
@@ -129,6 +128,22 @@ namespace GeradorTeste.WinApp
 
         private void testeMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorTeste(repositorioTeste);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorPDF controladorPDF)
+                controladorPDF.PDF();
+        }
+
+        private void testeMenuIteste_Click(object sender, EventArgs e)
+        {
+
             controlador = new ControladorTeste(repositorioTeste);
 
             lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
