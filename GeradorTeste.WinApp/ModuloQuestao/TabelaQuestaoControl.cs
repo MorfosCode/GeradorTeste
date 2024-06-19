@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.Compartilhado;
-
+using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloTestes;
 namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
 {
     public partial class TabelaQuestaoControl : UserControl
@@ -34,7 +35,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
                 grid.Rows.Add
                     (
                         questao.Id,
-                        questao.Materia.Nome,
+                        questao.Materia.NomeMateria,
                         questao.Materia.Serie,
                         questao.Enunciado,
                         questao.AlternativaCorreta.ToString()

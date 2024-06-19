@@ -34,6 +34,8 @@
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             disciplinaMenuItem = new ToolStripMenuItem();
             materiaMenuItem = new ToolStripMenuItem();
+            questaoMenuItem = new ToolStripMenuItem();
+            testeMenuItem = new ToolStripMenuItem();
             questãoMenuItem = new ToolStripMenuItem();
             pnlRegistros = new Panel();
             toolStrip1 = new ToolStrip();
@@ -43,13 +45,13 @@
             toolStripSeparator1 = new ToolStripSeparator();
             btnFiltrar = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
+            btnVisualizarMaterias = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            btnPdf = new ToolStripButton();
             btnDuplicaar = new ToolStripButton();
+            btnGabarito = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
             lblTipoCadastro = new ToolStripLabel();
-            btnPdf = new ToolStripButton();
-            toolStripSeparator2 = new ToolStripSeparator();
-            btnVisualizarMaterias = new ToolStripButton();
-            btnGabarito = new ToolStripButton();
             statusStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -87,7 +89,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { disciplinaMenuItem, materiaMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { disciplinaMenuItem, materiaMenuItem, questaoMenuItem, testeMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(109, 29);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -95,16 +97,30 @@
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
-            disciplinaMenuItem.Size = new Size(224, 30);
+            disciplinaMenuItem.Size = new Size(180, 30);
             disciplinaMenuItem.Text = "Disciplina";
             disciplinaMenuItem.Click += disciplinaMenuItem_Click;
             // 
             // materiaMenuItem
             // 
             materiaMenuItem.Name = "materiaMenuItem";
-            materiaMenuItem.Size = new Size(143, 24);
+            materiaMenuItem.Size = new Size(180, 30);
             materiaMenuItem.Text = "Materia";
             materiaMenuItem.Click += materiaMenuItem_Click;
+            // 
+            // questaoMenuItem
+            // 
+            questaoMenuItem.Name = "questaoMenuItem";
+            questaoMenuItem.Size = new Size(180, 30);
+            questaoMenuItem.Text = "Questão";
+            questaoMenuItem.Click += questaoMenuItem_Click_1;
+            // 
+            // testeMenuItem
+            // 
+            testeMenuItem.Name = "testeMenuItem";
+            testeMenuItem.Size = new Size(180, 30);
+            testeMenuItem.Text = "Teste";
+            testeMenuItem.Click += testeMenuItem_Click;
             // 
             // questãoMenuItem
             // 
@@ -115,17 +131,17 @@
             // 
             // pnlRegistros
             // 
-            pnlRegistros.Location = new Point(0, 85);
+            pnlRegistros.Location = new Point(0, 80);
             pnlRegistros.Margin = new Padding(3, 4, 3, 4);
             pnlRegistros.Name = "pnlRegistros";
-            pnlRegistros.Size = new Size(800, 358);
+            pnlRegistros.Size = new Size(914, 489);
             pnlRegistros.TabIndex = 7;
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnFiltrar, toolStripSeparator3, btnVisualizarMaterias, toolStripSeparator2, btnPdf, btnDuplicaar, btnGabarito, toolStripSeparator4, lblTipoCadastro });
-            toolStrip1.Location = new Point(0, 28);
+            toolStrip1.Location = new Point(0, 35);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(914, 41);
             toolStrip1.TabIndex = 8;
@@ -188,28 +204,21 @@
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 41);
             // 
-            // btnDuplicaar
+            // btnVisualizarMaterias
             // 
-            btnDuplicaar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnDuplicaar.Enabled = false;
-            btnDuplicaar.Image = Properties.Resources.library_add_FILL0_wght400_GRAD0_opsz24;
-            btnDuplicaar.ImageScaling = ToolStripItemImageScaling.None;
-            btnDuplicaar.ImageTransparentColor = Color.Magenta;
-            btnDuplicaar.Name = "btnDuplicaar";
-            btnDuplicaar.Padding = new Padding(5);
-            btnDuplicaar.Size = new Size(38, 38);
+            btnVisualizarMaterias.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnVisualizarMaterias.Enabled = false;
+            btnVisualizarMaterias.Image = Properties.Resources.btnVisualizarAlugueis;
+            btnVisualizarMaterias.ImageScaling = ToolStripItemImageScaling.None;
+            btnVisualizarMaterias.ImageTransparentColor = Color.Magenta;
+            btnVisualizarMaterias.Name = "btnVisualizarMaterias";
+            btnVisualizarMaterias.Padding = new Padding(5);
+            btnVisualizarMaterias.Size = new Size(38, 38);
             // 
-            // toolStripSeparator4
+            // toolStripSeparator2
             // 
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(6, 41);
-            // 
-            // lblTipoCadastro
-            // 
-            lblTipoCadastro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipoCadastro.Name = "lblTipoCadastro";
-            lblTipoCadastro.Size = new Size(123, 38);
-            lblTipoCadastro.Text = "Tipo de Cadastro";
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 41);
             // 
             // btnPdf
             // 
@@ -222,21 +231,16 @@
             btnPdf.Padding = new Padding(5);
             btnPdf.Size = new Size(38, 38);
             // 
-            // toolStripSeparator2
+            // btnDuplicaar
             // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 41);
-            // 
-            // btnVisualizarMaterias
-            // 
-            btnVisualizarMaterias.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnVisualizarMaterias.Enabled = false;
-            btnVisualizarMaterias.Image = Properties.Resources.btnVisualizarAlugueis;
-            btnVisualizarMaterias.ImageScaling = ToolStripItemImageScaling.None;
-            btnVisualizarMaterias.ImageTransparentColor = Color.Magenta;
-            btnVisualizarMaterias.Name = "btnVisualizarMaterias";
-            btnVisualizarMaterias.Padding = new Padding(5);
-            btnVisualizarMaterias.Size = new Size(38, 38);
+            btnDuplicaar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDuplicaar.Enabled = false;
+            btnDuplicaar.Image = Properties.Resources.library_add_FILL0_wght400_GRAD0_opsz24;
+            btnDuplicaar.ImageScaling = ToolStripItemImageScaling.None;
+            btnDuplicaar.ImageTransparentColor = Color.Magenta;
+            btnDuplicaar.Name = "btnDuplicaar";
+            btnDuplicaar.Padding = new Padding(5);
+            btnDuplicaar.Size = new Size(38, 38);
             // 
             // btnGabarito
             // 
@@ -248,6 +252,18 @@
             btnGabarito.Name = "btnGabarito";
             btnGabarito.Padding = new Padding(5);
             btnGabarito.Size = new Size(38, 38);
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(6, 41);
+            // 
+            // lblTipoCadastro
+            // 
+            lblTipoCadastro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipoCadastro.Name = "lblTipoCadastro";
+            lblTipoCadastro.Size = new Size(155, 38);
+            lblTipoCadastro.Text = "Tipo de Cadastro";
             // 
             // TelaPrincipalForm
             // 
@@ -298,5 +314,7 @@
         private ToolStripButton btnPdf;
         private ToolStripButton btnGabarito;
         private ToolStripMenuItem questãoMenuItem;
+        private ToolStripMenuItem questaoMenuItem;
+        private ToolStripMenuItem testeMenuItem;
     }
 }

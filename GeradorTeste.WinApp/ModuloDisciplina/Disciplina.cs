@@ -41,7 +41,7 @@ namespace GeradorTeste.ModuloDisciplina
 
         public override string ToString()
         {
-            return $"{Nome} ";
+            return $"{Nome}";
         }
     }
 }

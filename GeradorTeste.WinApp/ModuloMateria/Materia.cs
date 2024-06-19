@@ -12,10 +12,8 @@ namespace GeradorTeste.WinApp.ModuloMateria
 {
     public class Materia : EntidadeBase
     {
-        public string NomeMateria { get; set; }
-
         public Disciplina Disciplina { get; set; }
-        public string Nome { get; set; }
+        public string NomeMateria { get; set; }
         public string Serie { get; set; }
 
         public Materia()
@@ -26,7 +24,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
         public Materia(Disciplina disciplina, string nome, string serie)
         {
             this.Disciplina = disciplina;
-            this.Nome = nome;
+            this.NomeMateria = nome;
             this.Serie = serie;
         }
 
@@ -44,7 +42,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
             List<string> erros = new List<string>();
 
             if (string.IsNullOrEmpty(NomeMateria.Trim()))
-                erros.Add("O campo \"Nome\" é obrigatório");
+                erros.Add("O campo \"NomeMateria\" é obrigatório");
            
 
             if (string.IsNullOrEmpty(Serie.Trim()))
@@ -55,7 +53,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
 
         public override string ToString()
         {
-            return $"{{NomeMateria}} {{Serie}}, {{Disciplina}}";
+            return $"{NomeMateria}, {Serie}, {Disciplina}";
         }
     }
 }

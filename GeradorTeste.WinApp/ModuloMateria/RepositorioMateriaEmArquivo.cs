@@ -10,10 +10,8 @@ namespace GeradorTeste.WinApp.ModuloMateria
 {
     public class RepositorioMateriaEmArquivo : RepositorioBaseEmArquivo<Materia>, IRepositorioMateria
     {
-        public RepositorioMateriaEmArquivo() : base("materias.json")
+        public RepositorioMateriaEmArquivo() : base("materia.json")
         {
-        }
-
         }
     }
 }

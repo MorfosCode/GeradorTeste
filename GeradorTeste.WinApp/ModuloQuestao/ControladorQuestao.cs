@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.Compartilhado;
-using GeradorTeste.WinApp.ModuloDiciplina;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinForms.ModuloDisciplina;
 
@@ -46,7 +45,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
 
             TelaPrincipalForm
                 .Instancia
-                .AtualizarRodape($"O registro \"{novaQuestao.Materia.Nome + ", " + novaQuestao.Materia.Serie}\" foi criado com sucesso!");
+                .AtualizarRodape($"O registro \"{novaQuestao.Materia.NomeMateria + ", " + novaQuestao.Materia.Serie}\" foi criado com sucesso!");
         }
         #endregion
 
@@ -80,7 +79,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
 
             TelaPrincipalForm
                 .Instancia
-                .AtualizarRodape($"O registro \"{questaoEditada.Materia.Nome + ", " + questaoEditada.Materia.Serie}\" foi editado com sucesso!");
+                .AtualizarRodape($"O registro \"{questaoEditada.Materia.NomeMateria + ", " + questaoEditada.Materia.Serie}\" foi editado com sucesso!");
         }
         #endregion
 
@@ -99,7 +98,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
 
             DialogResult resposta = MessageBox.Show
             (
-              $"Você deseja realmente excluir o registro \"{questaoSelecionada.Materia.Nome + ", " + questaoSelecionada.Materia.Serie}\"?",
+              $"Você deseja realmente excluir o registro \"{questaoSelecionada.Materia.NomeMateria + ", " + questaoSelecionada.Materia.Serie}\"?",
               "Confirmar Exclusão",
               MessageBoxButtons.YesNo,
               MessageBoxIcon.Warning
@@ -114,7 +113,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
 
             TelaPrincipalForm
                 .Instancia
-                .AtualizarRodape($"O registro \"{questaoSelecionada.Materia.Nome + ", " + questaoSelecionada.Materia.Serie}\" foi excluído com sucesso!");
+                .AtualizarRodape($"O registro \"{questaoSelecionada.Materia.NomeMateria + ", " + questaoSelecionada.Materia.Serie}\" foi excluído com sucesso!");
         }
         #endregion
 
