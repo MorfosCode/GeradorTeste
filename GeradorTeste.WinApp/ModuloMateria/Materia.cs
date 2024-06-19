@@ -12,6 +12,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
 {
     public class Materia : EntidadeBase
     {
+        public Disciplina Disciplina { get; set; }
         public string NomeMateria { get; set; }
 
         public Disciplina Disciplina { get; set; }
@@ -26,7 +27,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
         public Materia(Disciplina disciplina, string nome, string serie)
         {
             this.Disciplina = disciplina;
-            this.Nome = nome;
+            this.NomeMateria = nome;
             this.Serie = serie;
         }
 
@@ -44,7 +45,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
             List<string> erros = new List<string>();
 
             if (string.IsNullOrEmpty(NomeMateria.Trim()))
-                erros.Add("O campo \"Nome\" é obrigatório");
+                erros.Add("O campo \"NomeMateria\" é obrigatório");
            
 
             if (string.IsNullOrEmpty(Serie.Trim()))

@@ -47,7 +47,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
         {
             List<string> erros = new List<string>();
 
-            if (string.IsNullOrEmpty(Materia.Nome.Trim()))
+            if (string.IsNullOrEmpty(Materia.NomeMateria.Trim()))
                 erros.Add("O campo \"MATÉRIA\" é obrigatório!");
 
             if(string.IsNullOrEmpty(Enunciado.Trim()))
