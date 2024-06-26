@@ -24,7 +24,7 @@ namespace GeradorTeste.WinApp
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
 
-            repositorioDisciplina = new RepositorioDisciplinaEmArquivos();
+            repositorioDisciplina = new RepositorioDisciplinaEmSql();
             repositorioMateria = new RepositorioMateriaEmArquivo();
             repositorioQuestao = new RepositorioQuestaoEmArquivo();
             repositorioTeste = new RepositorioTesteEmArquivo();

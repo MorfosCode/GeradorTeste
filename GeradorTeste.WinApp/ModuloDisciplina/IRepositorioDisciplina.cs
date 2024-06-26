@@ -6,7 +6,6 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
     {
         void Cadastrar(Disciplina novaDisciplina);
 
-        void CadastrarVarios(List<Disciplina> disciplinas);
 
         bool Editar(int id, Disciplina disciplinaEditado);
         bool Excluir(int id);

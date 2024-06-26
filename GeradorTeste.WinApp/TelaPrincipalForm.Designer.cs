@@ -32,9 +32,9 @@
             statusLabelPrincipal = new ToolStripStatusLabel();
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
-            questaoMenuItem = new ToolStripMenuItem();
             disciplinaMenuItem = new ToolStripMenuItem();
             materiaMenuItem = new ToolStripMenuItem();
+            questaoMenuItem = new ToolStripMenuItem();
             testeMenuIteste = new ToolStripMenuItem();
             testeMenuItem = new ToolStripMenuItem();
             pnlRegistros = new Panel();
@@ -45,13 +45,13 @@
             toolStripSeparator1 = new ToolStripSeparator();
             btnFiltrar = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
+            btnVisalizar = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             btnPdf = new ToolStripButton();
+            btnDuplicar = new ToolStripButton();
             btnGabarito = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
             lblTipoCadastro = new ToolStripLabel();
-            btnDuplicar = new ToolStripButton();
-            btnVisalizar = new ToolStripButton();
             statusStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -92,13 +92,6 @@
             cadastrosToolStripMenuItem.Size = new Size(86, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
-            // questaoMenuItem
-            // 
-            questaoMenuItem.Name = "questaoMenuItem";
-            questaoMenuItem.Size = new Size(143, 24);
-            questaoMenuItem.Text = "Questão";
-            questaoMenuItem.Click += questaoMenuItem_Click_1;
-            // 
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
@@ -112,6 +105,13 @@
             materiaMenuItem.Size = new Size(143, 24);
             materiaMenuItem.Text = "Materia";
             materiaMenuItem.Click += materiaMenuItem_Click;
+            // 
+            // questaoMenuItem
+            // 
+            questaoMenuItem.Name = "questaoMenuItem";
+            questaoMenuItem.Size = new Size(143, 24);
+            questaoMenuItem.Text = "Questão";
+            questaoMenuItem.Click += questaoMenuItem_Click_1;
             // 
             // testeMenuIteste
             // 
@@ -129,9 +129,9 @@
             // 
             // pnlRegistros
             // 
-            pnlRegistros.Location = new Point(0, 65);
+            pnlRegistros.Location = new Point(0, 66);
             pnlRegistros.Name = "pnlRegistros";
-            pnlRegistros.Size = new Size(800, 362);
+            pnlRegistros.Size = new Size(800, 361);
             pnlRegistros.TabIndex = 7;
             // 
             // toolStrip1
@@ -200,6 +200,17 @@
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 41);
             // 
+            // btnVisalizar
+            // 
+            btnVisalizar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnVisalizar.Enabled = false;
+            btnVisalizar.Image = Properties.Resources.btnVisualizarAlugueis;
+            btnVisalizar.ImageScaling = ToolStripItemImageScaling.None;
+            btnVisalizar.ImageTransparentColor = Color.Magenta;
+            btnVisalizar.Name = "btnVisalizar";
+            btnVisalizar.Padding = new Padding(5);
+            btnVisalizar.Size = new Size(38, 38);
+            // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
@@ -216,6 +227,17 @@
             btnPdf.Padding = new Padding(5);
             btnPdf.Size = new Size(38, 38);
             btnPdf.Click += btnPdf_Click;
+            // 
+            // btnDuplicar
+            // 
+            btnDuplicar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDuplicar.Enabled = false;
+            btnDuplicar.Image = Properties.Resources.library_add_FILL0_wght400_GRAD0_opsz24;
+            btnDuplicar.ImageScaling = ToolStripItemImageScaling.None;
+            btnDuplicar.ImageTransparentColor = Color.Magenta;
+            btnDuplicar.Name = "btnDuplicar";
+            btnDuplicar.Padding = new Padding(5);
+            btnDuplicar.Size = new Size(38, 38);
             // 
             // btnGabarito
             // 
@@ -239,28 +261,6 @@
             lblTipoCadastro.Name = "lblTipoCadastro";
             lblTipoCadastro.Size = new Size(123, 38);
             lblTipoCadastro.Text = "Tipo de Cadastro";
-            // 
-            // btnDuplicar
-            // 
-            btnDuplicar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnDuplicar.Enabled = false;
-            btnDuplicar.Image = Properties.Resources.library_add_FILL0_wght400_GRAD0_opsz24;
-            btnDuplicar.ImageScaling = ToolStripItemImageScaling.None;
-            btnDuplicar.ImageTransparentColor = Color.Magenta;
-            btnDuplicar.Name = "btnDuplicar";
-            btnDuplicar.Padding = new Padding(5);
-            btnDuplicar.Size = new Size(38, 38);
-            // 
-            // btnVisalizar
-            // 
-            btnVisalizar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnVisalizar.Enabled = false;
-            btnVisalizar.Image = Properties.Resources.btnVisualizarAlugueis;
-            btnVisalizar.ImageScaling = ToolStripItemImageScaling.None;
-            btnVisalizar.ImageTransparentColor = Color.Magenta;
-            btnVisalizar.Name = "btnVisalizar";
-            btnVisalizar.Padding = new Padding(5);
-            btnVisalizar.Size = new Size(38, 38);
             // 
             // TelaPrincipalForm
             // 
