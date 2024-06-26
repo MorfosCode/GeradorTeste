@@ -10,12 +10,8 @@ namespace GeradorTeste.WinForms.ModuloDisciplina
 {
     public partial class TelaCadastroQuestao : Form
     {
-        public TelaCadastroQuestao()
-        {
-            InitializeComponent();
-        }
         private Disciplina disciplina;
-
+        
 
         public Disciplina Disciplina
         {
@@ -30,15 +26,28 @@ namespace GeradorTeste.WinForms.ModuloDisciplina
 
             }
         }
+
+        private  List<Disciplina>  disciplinaCadatradas;
+        
+        public TelaCadastroQuestao(List<Disciplina> diciplinaCdastradas)
+        {
+            InitializeComponent();
+
+            this.disciplinaCadatradas = diciplinaCdastradas;
+        }
+
+
         private void btnGravar_Click(object sender, EventArgs e)
         {
-           string nome = txtDisciplina.Text;
+            string nome = txtDisciplina.Text;
 
 
 
             disciplina = new Disciplina(nome);
 
             List<string> erros = disciplina.Validar();
+         
+            DisciplinaDuplicada(erros);
 
             if (erros.Count > 0)
             {
@@ -47,7 +56,16 @@ namespace GeradorTeste.WinForms.ModuloDisciplina
                 DialogResult = DialogResult.None;
             }
         }
-      
+
+        private void DisciplinaDuplicada(List<string> erros)
+        {
+            if (disciplinaCadatradas.Any(d => d.Nome == disciplina.Nome))
+            {
+
+                erros.Add("Já existe uma diciplina com esse nome cadastrada! Tente novamente.");
+
+            }
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

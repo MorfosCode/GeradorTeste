@@ -32,7 +32,9 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
 
         public override void Adicionar()
         {
-            TelaCadastroQuestao telaCadastro = new TelaCadastroQuestao();
+            List<Disciplina> disciplinaCadastradas = repositorioDisciplina.SelecionarTodos();
+
+            TelaCadastroQuestao telaCadastro = new TelaCadastroQuestao(disciplinaCadastradas);
             DialogResult resultado = telaCadastro.ShowDialog();
 
             if (resultado != DialogResult.OK)
@@ -51,7 +53,8 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
 
         public override void Editar()
         {
-            TelaCadastroQuestao telaCadastro = new TelaCadastroQuestao();
+            List<Disciplina> disciplinaCadastradas = repositorioDisciplina.SelecionarTodos();
+            TelaCadastroQuestao telaCadastro = new TelaCadastroQuestao(disciplinaCadastradas);
 
             int idSelecionado = tabelaDisciplina.ObterRegistroSelecionado();
 

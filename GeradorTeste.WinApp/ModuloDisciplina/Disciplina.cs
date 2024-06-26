@@ -36,6 +36,9 @@ namespace GeradorTeste.ModuloDisciplina
             if (string.IsNullOrEmpty(Nome.Trim()))
             erros.Add("O campo \"DISCIPLINA\" é obrigatório");
 
+            else if (Nome.Trim().Length < 3)
+                erros.Add("O nome da disciplina deve conter ao menos 3 caracteres!");
+
             return erros;
         }
 

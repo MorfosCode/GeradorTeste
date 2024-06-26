@@ -150,5 +150,10 @@ namespace GeradorTeste.WinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+
+        private void TelaPrincipalForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
