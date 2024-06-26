@@ -76,8 +76,6 @@
             rdbSegunda.TabIndex = 47;
             rdbSegunda.TabStop = true;
             rdbSegunda.Text = "2º";
-            rdbSegunda.UseVisualStyleBackColor = true;
-            rdbSegunda.CheckedChanged += rdbSegunda_CheckedChanged;
             // 
             // rdbPrimeira
             // 
@@ -88,8 +86,6 @@
             rdbPrimeira.TabIndex = 46;
             rdbPrimeira.TabStop = true;
             rdbPrimeira.Text = "1º";
-            rdbPrimeira.UseVisualStyleBackColor = true;
-            rdbPrimeira.CheckedChanged += rdbPrimeira_CheckedChanged;
             // 
             // txtMateria
             // 

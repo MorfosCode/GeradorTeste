@@ -13,12 +13,12 @@ namespace GeradorTeste.WinApp.ModuloMateria
         public Disciplina Disciplina { get; set; }
         public string NomeMateria { get; set; }
 
-        public string Nome { get; set; }
+
         public string Serie { get; set; }
 
         public Materia()
         {
-            
+
         }
 
         public Materia(Disciplina disciplina, string nome, string serie)
@@ -43,7 +43,9 @@ namespace GeradorTeste.WinApp.ModuloMateria
 
             if (string.IsNullOrEmpty(NomeMateria.Trim()))
                 erros.Add("O campo \"NomeMateria\" é obrigatório");
-           
+
+            if (NomeMateria.Length < 2)
+                erros.Add($"O nome da matéria deve ter mais de 2 letras!");
 
             if (string.IsNullOrEmpty(Serie.Trim()))
                 erros.Add("O checkbox \"Série\" é obrigatório");
@@ -54,6 +56,25 @@ namespace GeradorTeste.WinApp.ModuloMateria
         public override string ToString()
         {
             return $"{{NomeMateria}} {{Serie}}, {{Disciplina}}";
+        }
+
+        public bool AtribuirDiciplina()
+        {
+            bool conseguiuAdicionar = Disciplina.AdicionaMateria(this);
+
+            return conseguiuAdicionar;
+        }
+
+
+        public bool RemoverDiciplina()
+        {
+            bool conseguiuRemover = Disciplina.RemoveMateria(this);
+
+            if (!conseguiuRemover)
+                return false;
+
+            Disciplina = null;
+            return true;
         }
     }
 }

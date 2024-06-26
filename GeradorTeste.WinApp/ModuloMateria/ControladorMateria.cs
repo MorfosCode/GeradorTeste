@@ -1,4 +1,5 @@
 ﻿
+using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using System;
@@ -35,7 +36,10 @@ namespace GeradorTeste.WinApp.ModuloMateria
 
         public override void Adicionar()
         {
-            TelaCadastroMateriaForm telaCadastro = new TelaCadastroMateriaForm(repositorioDisciplina.SelecionarTodos());
+            List<Disciplina> disciplinascadatrdas = repositorioDisciplina.SelecionarTodos();
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+
+            TelaCadastroMateriaForm telaCadastro = new TelaCadastroMateriaForm(disciplinascadatrdas, materiasCadastradas);
             DialogResult resultado = telaCadastro.ShowDialog();
 
             if (resultado != DialogResult.OK)
@@ -46,6 +50,8 @@ namespace GeradorTeste.WinApp.ModuloMateria
 
             CarregarMateria();
 
+            novaMateria.AtribuirDiciplina();
+
             TelaPrincipalForm
                 .Instancia
                 .AtualizarRodape($"O registro \"{novaMateria.NomeMateria}\" foi criado com sucesso!");
@@ -55,8 +61,7 @@ namespace GeradorTeste.WinApp.ModuloMateria
 
         public override void Editar()
         {
-
-            TelaCadastroMateriaForm telaCadastro = new TelaCadastroMateriaForm(repositorioDisciplina.SelecionarTodos());
+           
 
             int idSelecionado = tabelaMateria.ObterRegistroSelecionado();
 
@@ -68,6 +73,11 @@ namespace GeradorTeste.WinApp.ModuloMateria
                 return;
             }
 
+            List<Materia> materiasCadastradas = repositorioMateria.SelecionarTodos();
+            List<Disciplina> disciplinasCadastradas = repositorioDisciplina.SelecionarTodos();
+
+            TelaCadastroMateriaForm telaCadastro = new TelaCadastroMateriaForm(disciplinasCadastradas, materiasCadastradas);
+
             telaCadastro.Materia = materiaSelecionado;
 
             DialogResult resultado = telaCadastro.ShowDialog();
@@ -76,6 +86,10 @@ namespace GeradorTeste.WinApp.ModuloMateria
                 return;
 
             Materia materiaEditada = telaCadastro.Materia;
+
+            materiaSelecionado.RemoverDiciplina();
+            materiaEditada.AtribuirDiciplina();
+
             repositorioMateria.Editar(materiaSelecionado.Id, materiaEditada);
 
             CarregarMateria();
@@ -108,6 +122,9 @@ namespace GeradorTeste.WinApp.ModuloMateria
 
             if (resposta != DialogResult.Yes)
                 return;
+
+
+            materiaSelecionado.RemoverDiciplina();
 
             repositorioMateria.Excluir(materiaSelecionado.Id);
 

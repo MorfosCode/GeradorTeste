@@ -43,16 +43,17 @@ namespace GeradorTeste.WinApp.ModuloMateria
             }
         }
 
-
-        public TelaCadastroMateriaForm(List<Disciplina> disciplinas)
+        private List<Materia> materiasCadastradas;
+        public TelaCadastroMateriaForm(List<Disciplina> disciplinas, List<Materia> materiasCadastradas)
         {
             InitializeComponent();
             CarregarDisciplina(disciplinas);
+            this.materiasCadastradas = materiasCadastradas;
         }
 
         private void CarregarDisciplina(List<Disciplina> disciplinas)
         {
-            comboBoxDisciplina.Items.Clear();
+           
 
             foreach (Disciplina disciplina in disciplinas)
                 comboBoxDisciplina.Items.Add(disciplina);
@@ -64,20 +65,21 @@ namespace GeradorTeste.WinApp.ModuloMateria
             Disciplina disciplina = (Disciplina)comboBoxDisciplina.SelectedItem;
             string serie = "";
 
-            if (rdbPrimeira.Checked == true)
+            if (rdbPrimeira.Checked )
             {
                 serie = "1ª";
             }
-            if (rdbSegunda.Checked == true)
+           else if (rdbSegunda.Checked)
             {
                 serie = "2ª";
             }
 
-
-
             materia = new Materia(disciplina, nome, serie);
 
             List<string> erros = materia.Validar();
+
+            if (MateriaTemNomeDuplicado())
+                erros.Add("Já existe uma matéria com este nome cadastrada, tente utilizar outro!");
 
             if (erros.Count > 0)
             {
@@ -87,22 +89,9 @@ namespace GeradorTeste.WinApp.ModuloMateria
             }
 
         }
-
-        private void rdbPrimeira_CheckedChanged(object sender, EventArgs e)
+        private bool MateriaTemNomeDuplicado()
         {
-            if (rdbPrimeira.Checked == true)
-                rdbSegunda.Checked = false;
-            else
-                rdbSegunda.Checked = true;
-        }
-
-        private void rdbSegunda_CheckedChanged(object sender, EventArgs e)
-        {
-
-            if (rdbSegunda.Checked == true)
-                rdbPrimeira.Checked = false;
-            else
-                rdbPrimeira.Checked = true;
+            return materiasCadastradas.Any(m => m.NomeMateria == materia.NomeMateria);
         }
     } 
     
