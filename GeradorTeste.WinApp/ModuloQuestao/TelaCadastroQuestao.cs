@@ -30,10 +30,21 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
             }
             set
             {
-                comboBoxMaterias.Text = value.Materia.Nome + ", " + value.Materia.Serie;
+                comboBoxMaterias.Text = value.Materia.NomeMateria + ", " + value.Materia.Serie;
                 textBoxId.Text = value.Id.ToString();
                 textBoxEnunciado.Text = value.Enunciado;
-                checkedListBoxRespostas.Items.Add(value.Alternativas);
+                string alternativaCorreta = value.AlternativaCorreta;
+
+                foreach (string alternativa in value.Alternativas)
+                {
+                    string opcao = alternativa;
+
+                    if (alternativa == alternativaCorreta)
+                        checkedListBoxRespostas.Items.Add(alternativa, true);
+
+                    else
+                        checkedListBoxRespostas.Items.Add(alternativa, false);
+                }
             }
         }
 
@@ -58,8 +69,7 @@ namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
             comboBoxMaterias.Items.Clear();
             foreach (Materia materia in listaMateria)
             {
-                string materiaSerie = materia.Nome + ", " + materia.Serie;
-                comboBoxMaterias.Items.Add(materiaSerie);
+                comboBoxMaterias.Items.Add(materia.NomeMateria + ", " + materia.Serie);
             }
         }
         #endregion

@@ -3,6 +3,7 @@ using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloMateria;
 using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloTestes;
 
 namespace GeradorTeste.WinApp
 {
@@ -13,6 +14,7 @@ namespace GeradorTeste.WinApp
         IRepositorioDisciplina repositorioDisciplina;
         IRepositorioMateria repositorioMateria;
         IRepositorioQuestao repositorioQuestao;
+        IRepositorioTeste repositorioTeste;
 
         public static TelaPrincipalForm Instancia { get; private set; }
         public TelaPrincipalForm()
@@ -23,8 +25,9 @@ namespace GeradorTeste.WinApp
             Instancia = this;
 
             repositorioDisciplina = new RepositorioDisciplinaEmArquivos();
-            repositorioMateria = new RepositorioMateriaEmArquivo();       
+            repositorioMateria = new RepositorioMateriaEmArquivo();
             repositorioQuestao = new RepositorioQuestaoEmArquivo();
+            repositorioTeste = new RepositorioTesteEmArquivo();
         }
 
         public void AtualizarRodape(string texto)
@@ -55,7 +58,7 @@ namespace GeradorTeste.WinApp
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
-
+            btnPdf.Enabled = controladorSelecionado is IControladorPDF;
             ConfigurarToolTips(controladorSelecionado);
         }
 
@@ -65,14 +68,13 @@ namespace GeradorTeste.WinApp
             btnEditar.ToolTipText = controladorSelecionado.ToolTipEditar;
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
 
+            if (controladorSelecionado is IControladorPDF controladorPDF)
+                btnPdf.ToolTipText = controladorPDF.ToolTipGerarPDF;
+
         }
 
 
 
-            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
-
-            ConfigurarTelaPrincipal(controlador);
-        }
 
         private void questaoMenuItem_Click(object sender, EventArgs e)
         {
@@ -113,6 +115,40 @@ namespace GeradorTeste.WinApp
 
             ConfigurarTelaPrincipal(controlador);
 
+        }
+
+        private void questaoMenuItem_Click_1(object sender, EventArgs e)
+        {
+            controlador = new ControladorQuestao(repositorioQuestao);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void testeMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorTeste(repositorioTeste);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorPDF controladorPDF)
+                controladorPDF.PDF();
+        }
+
+        private void testeMenuIteste_Click(object sender, EventArgs e)
+        {
+
+            controlador = new ControladorTeste(repositorioTeste);
+
+            lblTipoCadastro.Text = "Cadastro de " + controlador.TipoCadastro;
+
+            ConfigurarTelaPrincipal(controlador);
         }
     }
 }

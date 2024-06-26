@@ -80,7 +80,6 @@
             comboBoxMaterias.Location = new Point(99, 22);
             comboBoxMaterias.Name = "comboBoxMaterias";
             comboBoxMaterias.Size = new Size(275, 28);
-            comboBoxMaterias.Sorted = true;
             comboBoxMaterias.TabIndex = 0;
             // 
             // groupBoxRespostas
