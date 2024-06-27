@@ -9,7 +9,7 @@ using GeradorTeste.WinApp.ModuloTestes.ModuloPDF;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {
-    public class ControladorTeste : ControladorBase, IControladorPDF
+    public class ControladorTeste : ControladorBase, IControladorPDF, IControladorDuplicavel
     {
         IRepositorioTeste repositorioTeste;
         private TabelaTesteControl tabelaTeste;
@@ -30,6 +30,8 @@ namespace GeradorTeste.WinApp.ModuloTestes
         public override string ToolTipExcluir { get { return "Excluir Teste"; } }
 
         public string ToolTipGerarPDF => "Gerar PDF de Teste";
+
+        public string ToolTipDuplicar => "Duplicar um Teste existente";
 
         #endregion
 
@@ -148,6 +150,42 @@ namespace GeradorTeste.WinApp.ModuloTestes
             
         }
 
+
+        public void Duplicar()
+        {
+            int idSelecionado = tabelaTeste.ObterRegistroSelecionado();
+
+            Teste testeSelecionado = repositorioTeste.SelecionarPorId(idSelecionado);
+
+            if (testeSelecionado == null)
+            {
+                MessageBox.Show("Por favor selecione um registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            TelaCadastroTesteForm telaCadastroTeste = new TelaCadastroTesteForm();
+
+            telaCadastroTeste.Teste = testeSelecionado;
+                
+           
+            DialogResult resultado = telaCadastroTeste.ShowDialog();
+
+            if (resultado != DialogResult.OK)
+                return;
+
+            Teste testeDuplicado = telaCadastroTeste.Teste;
+            repositorioTeste.Cadastrar(testeDuplicado);
+
+            CarregarTestes();
+
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{testeDuplicado.Titulo}\" foi criado em uma duplicação com sucesso!");
+        }
+
+
+
         #region Obtem listagem de testes nos registro
         public override UserControl ObterListagem()
         {
@@ -169,9 +207,11 @@ namespace GeradorTeste.WinApp.ModuloTestes
             List<Teste> testes = repositorioTeste.SelecionarTodos();
             tabelaTeste.AtualizarRegistros(testes);
         }
+
+       
         #endregion
-   
-    
-    
+
+
+
     }
 }

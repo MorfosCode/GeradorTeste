@@ -4,6 +4,7 @@ using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloMateria;
 using GeradorTeste.WinApp.ModuloCadastrarQuestao;
 using GeradorTeste.WinApp.ModuloTestes;
+using GeradorTeste.WinApp.ModuloTestes.ModuloPDF;
 
 namespace GeradorTeste.WinApp
 {
@@ -59,6 +60,8 @@ namespace GeradorTeste.WinApp
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
 
             btnPdf.Enabled = controladorSelecionado is IControladorPDF;
+            btnDuplicar.Enabled = controladorSelecionado is IControladorDuplicavel;
+
             ConfigurarToolTips(controladorSelecionado);
         }
 
@@ -71,6 +74,8 @@ namespace GeradorTeste.WinApp
             if (controladorSelecionado is IControladorPDF controladorPDF)
                 btnPdf.ToolTipText = controladorPDF.ToolTipGerarPDF;
 
+            if (controladorSelecionado is IControladorDuplicavel controladorDuplicavel)
+                btnDuplicar.ToolTipText= controladorDuplicavel.ToolTipDuplicar;
         }
 
 
@@ -154,6 +159,12 @@ namespace GeradorTeste.WinApp
         private void TelaPrincipalForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDuplicar_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorDuplicavel controladorDuplicavel)
+                controladorDuplicavel.Duplicar();
         }
     }
 }

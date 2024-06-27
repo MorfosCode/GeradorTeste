@@ -217,6 +217,18 @@
             btnPdf.Size = new Size(38, 38);
             btnPdf.Click += btnPdf_Click;
             // 
+            // btnDuplicar
+            // 
+            btnDuplicar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDuplicar.Enabled = false;
+            btnDuplicar.Image = Properties.Resources.library_add_FILL0_wght400_GRAD0_opsz24;
+            btnDuplicar.ImageScaling = ToolStripItemImageScaling.None;
+            btnDuplicar.ImageTransparentColor = Color.Magenta;
+            btnDuplicar.Name = "btnDuplicar";
+            btnDuplicar.Padding = new Padding(5);
+            btnDuplicar.Size = new Size(38, 38);
+            btnDuplicar.Click += btnDuplicar_Click;
+            // 
             // btnGabarito
             // 
             btnGabarito.DisplayStyle = ToolStripItemDisplayStyle.Image;

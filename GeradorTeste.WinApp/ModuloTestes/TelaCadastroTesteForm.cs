@@ -34,6 +34,8 @@ namespace GeradorTeste.WinApp.ModuloTestes
             }
             set
             {
+                
+
                 textBoxId.Text = value.ToString();
                 txtTitulo.Text = value.Titulo;
                 cmbDisciplina.Text = value.Disciplina.Nome;
@@ -272,15 +274,14 @@ namespace GeradorTeste.WinApp.ModuloTestes
             ValidarCampos();
             VerificarSeTituloDoTesteExiste();
 
-            Disciplina disciplina = new Disciplina();
-            Materia materia = new Materia();
+           
             List<Questao> questoes = new List<Questao>();
 
             string titulo = txtTitulo.Text;
 
-            disciplina = (Disciplina)cmbDisciplina.SelectedItem;
+            Disciplina disciplina = (Disciplina)cmbDisciplina.SelectedItem;
 
-            materia = (Materia)cmbMateria.SelectedItem;
+           Materia materia = (Materia)cmbMateria.SelectedItem;
 
             int totalDeQuestoes = Convert.ToInt32(domainUpDownQuantidadeDeQuestoes.Text);
 
@@ -290,14 +291,14 @@ namespace GeradorTeste.WinApp.ModuloTestes
 
             teste = new Teste(titulo, totalDeQuestoes, recuperacao, disciplina, materia, questoes);
 
-            List<string> erros = teste.Validar();
+          /*  List<string> erros = teste.Validar();
 
             if (erros.Count > 0)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
 
                 DialogResult = DialogResult.None;
-            }
+            }*/
         }
 
         #region Verifica a ocorrencia do título sugerido pelo usuário
