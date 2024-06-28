@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GeradorTeste.WinApp.Compartilhado;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {

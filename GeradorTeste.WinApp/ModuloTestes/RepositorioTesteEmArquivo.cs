@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GeradorTeste.WinApp.Compartilhado;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {

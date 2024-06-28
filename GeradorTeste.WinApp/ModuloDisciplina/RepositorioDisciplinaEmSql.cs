@@ -144,12 +144,12 @@ namespace GeradorTeste.WinApp.ModuloDisciplina
 
         }
 
-        private Disciplina ConverterParaDisciplina(SqlDataReader leitor)
+        private Disciplina ConverterParaDisciplina(SqlDataReader leitorDisciplina)
         {
            Disciplina disciplina =new Disciplina()
             {
-                Id = Convert.ToInt32(leitor["ID"]),
-                Nome = Convert.ToString(leitor["NOME"]),
+                Id = Convert.ToInt32(leitorDisciplina["ID"]),
+                Nome = Convert.ToString(leitorDisciplina["NOME"]),
             };
 
             return disciplina;

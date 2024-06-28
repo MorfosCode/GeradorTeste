@@ -1,4 +1,4 @@
-﻿namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+﻿namespace GeradorTeste.WinApp.ModuloQuestao
 {
     partial class TabelaQuestaoControl
     {

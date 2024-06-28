@@ -2,7 +2,7 @@ using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloMateria;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 using GeradorTeste.WinApp.ModuloTestes;
 
 namespace GeradorTeste.WinApp
@@ -25,7 +25,7 @@ namespace GeradorTeste.WinApp
             Instancia = this;
 
             repositorioDisciplina = new RepositorioDisciplinaEmSql();
-            repositorioMateria = new RepositorioMateriaEmArquivo();
+            repositorioMateria = new RepositorioMateriaEmSql();
             repositorioQuestao = new RepositorioQuestaoEmArquivo();
             repositorioTeste = new RepositorioTesteEmArquivo();
         }

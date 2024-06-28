@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GeradorTeste.WinApp.Compartilhado;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 using GeradorTeste.WinApp.ModuloTestes.ModuloPDF;
+using IControladorPDF = GeradorTeste.WinApp.Compartilhado.IControladorPDF;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {

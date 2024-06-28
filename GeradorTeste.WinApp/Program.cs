@@ -1,4 +1,4 @@
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 
 namespace GeradorTeste.WinApp
 {

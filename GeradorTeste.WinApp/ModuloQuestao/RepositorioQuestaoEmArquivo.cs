@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GeradorTeste.WinApp.Compartilhado;
+using GeradorTeste.WinApp.ModuloQuestao;
 
-namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+namespace GeradorTeste.WinApp.ModuloQuestao
 {
     public class RepositorioQuestaoEmArquivo : RepositorioBaseEmArquivo<Questao>, IRepositorioQuestao
     {

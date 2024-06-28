@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.WinApp.ModuloMateria;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 
 namespace GeradorTeste.WinApp.ModuloTestes
 {
@@ -15,14 +15,14 @@ namespace GeradorTeste.WinApp.ModuloTestes
         public string Titulo { get; set; }
         public int QuantidadeQuestoes { get; set; }
         public bool Recuperacao { get; set; }
-        public Disciplina Disciplina { get; set; }
+        public GeradorTeste.ModuloDisciplina.Disciplina Disciplina { get; set; }
         public Materia Materia { get; set; }
-        public List<Questao> Questoes { get; set; }
+        public List<ModuloQuestao.Questao> Questoes { get; set; }
 
         #region Métodos construtores de classe
         public Teste() { }
 
-        public Teste(string titulo, int quantidadeQuestoes, bool recuparacao, Disciplina disciplina, Materia materia, List<Questao> questoes)
+        public Teste(string titulo, int quantidadeQuestoes, bool recuparacao, GeradorTeste.ModuloDisciplina.Disciplina disciplina, Materia materia, List<ModuloQuestao.Questao> questoes)
         {
             this.Titulo = titulo;
             this.QuantidadeQuestoes = quantidadeQuestoes;

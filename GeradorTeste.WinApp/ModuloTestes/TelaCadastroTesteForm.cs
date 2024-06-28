@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GeradorTeste.ModuloDisciplina;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloMateria;
 using Microsoft.VisualBasic;
@@ -68,7 +68,7 @@ namespace GeradorTeste.WinApp.ModuloTestes
         {
             cmbDisciplina.Items.Clear();
 
-            foreach (Disciplina disciplina in repositorioDisciplina.SelecionarTodos())
+            foreach (GeradorTeste.ModuloDisciplina.Disciplina disciplina in repositorioDisciplina.SelecionarTodos())
                 cmbDisciplina.Items.Add(disciplina);
 
             cmbMateria.DisplayMember = "Nome";
@@ -139,15 +139,15 @@ namespace GeradorTeste.WinApp.ModuloTestes
             else
                 serie = "2ª";
 
-            List<Questao> questaoPorSerie = new List<Questao>();
+            List<ModuloQuestao.Questao> questaoPorSerie = new List<ModuloQuestao.Questao>();
 
-            foreach (Questao questao in repositorioQuestao.SelecionarTodos())
+            foreach (ModuloQuestao.Questao questao in repositorioQuestao.SelecionarTodos())
             {
                 if (questao.Materia.Serie == serie)
                     questaoPorSerie.Add(questao);
             }
 
-            foreach (Questao questao in questaoPorSerie)
+            foreach (ModuloQuestao.Questao questao in questaoPorSerie)
             {
                 if (questao.Materia.NomeMateria == cmbMateria.Text)
                     listQuestoes.Items.Add(questao.Enunciado);
@@ -167,15 +167,15 @@ namespace GeradorTeste.WinApp.ModuloTestes
             else
                 serie = "2ª";
 
-            List<Questao> questaoPorSerie = new List<Questao>();
+            List<ModuloQuestao.Questao> questaoPorSerie = new List<ModuloQuestao.Questao>();
 
-            foreach (Questao questao in repositorioQuestao.SelecionarTodos())
+            foreach (ModuloQuestao.Questao questao in repositorioQuestao.SelecionarTodos())
             {
                 if (questao.Materia.Serie == serie)
                     questaoPorSerie.Add(questao);
             }
 
-            foreach (Questao questao in questaoPorSerie)
+            foreach (ModuloQuestao.Questao questao in questaoPorSerie)
             {
                 if (questao.Materia.Disciplina.Nome == cmbDisciplina.Text)
                     listQuestoes.Items.Add(questao);
@@ -215,8 +215,8 @@ namespace GeradorTeste.WinApp.ModuloTestes
             if (domainUpDownQuantidadeDeQuestoes.Text != "")
             {
                 Random numeroAleatorio = new Random();
-                List<Questao> questoesListadas = new List<Questao>();
-                List<Questao> questoesSorteadas = new List<Questao>();
+                List<ModuloQuestao.Questao> questoesListadas = new List<ModuloQuestao.Questao>();
+                List<ModuloQuestao.Questao> questoesSorteadas = new List<ModuloQuestao.Questao>();
                 int indexControlador;
                 int numeroQuestoes = Convert.ToInt32(domainUpDownQuantidadeDeQuestoes.Text);
 
@@ -229,7 +229,7 @@ namespace GeradorTeste.WinApp.ModuloTestes
                 }
                 else
                 {
-                    foreach (Questao questao in listQuestoes.Items)
+                    foreach (ModuloQuestao.Questao questao in listQuestoes.Items)
                     {
                         questoesListadas.Add(questao);
                     }
@@ -245,7 +245,7 @@ namespace GeradorTeste.WinApp.ModuloTestes
 
                     listQuestoes.Items.Clear();
 
-                    foreach (Questao questao in questoesSorteadas)
+                    foreach (ModuloQuestao.Questao questao in questoesSorteadas)
                     {
                         listQuestoes.Items.Add(questao);
                     }
@@ -272,13 +272,13 @@ namespace GeradorTeste.WinApp.ModuloTestes
             ValidarCampos();
             VerificarSeTituloDoTesteExiste();
 
-            Disciplina disciplina = new Disciplina();
+            GeradorTeste.ModuloDisciplina.Disciplina disciplina = new GeradorTeste.ModuloDisciplina.Disciplina();
             Materia materia = new Materia();
-            List<Questao> questoes = new List<Questao>();
+            List<ModuloQuestao.Questao> questoes = new List<ModuloQuestao.Questao>();
 
             string titulo = txtTitulo.Text;
 
-            disciplina = (Disciplina)cmbDisciplina.SelectedItem;
+            disciplina = (GeradorTeste.ModuloDisciplina.Disciplina)cmbDisciplina.SelectedItem;
 
             materia = (Materia)cmbMateria.SelectedItem;
 

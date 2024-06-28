@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.WinApp.ModuloMateria;
 
-namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+namespace GeradorTeste.WinApp.ModuloQuestao
 {
     public class Questao : EntidadeBase
     {

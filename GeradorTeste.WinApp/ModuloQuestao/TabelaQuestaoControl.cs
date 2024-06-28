@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.Compartilhado;
-using GeradorTeste.WinApp.ModuloCadastrarQuestao;
+using GeradorTeste.WinApp.ModuloQuestao;
 using GeradorTeste.WinApp.ModuloTestes;
-namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+namespace GeradorTeste.WinApp.ModuloQuestao
 {
     public partial class TabelaQuestaoControl : UserControl
     {

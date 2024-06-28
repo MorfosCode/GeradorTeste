@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GeradorTeste.ModuloDisciplina;
 
 namespace GeradorTeste.WinApp.ModuloMateria
 {
@@ -11,8 +10,6 @@ namespace GeradorTeste.WinApp.ModuloMateria
     {
 
         void Cadastrar(Materia novaMateria);
-
-        void CadastrarVarios(List<Materia> materias);
 
         bool Editar(int id, Materia materiaEditada);
         bool Excluir(int id);

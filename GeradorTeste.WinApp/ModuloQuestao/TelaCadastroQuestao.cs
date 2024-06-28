@@ -11,7 +11,7 @@ using GeradorTeste.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinApp.ModuloMateria;
 
-namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+namespace GeradorTeste.WinApp.ModuloQuestao
 {
     public partial class TelaCadastroQuestao : Form
     {

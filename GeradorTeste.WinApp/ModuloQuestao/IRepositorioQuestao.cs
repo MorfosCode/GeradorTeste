@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GeradorTeste.ModuloDisciplina;
 
-namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+namespace GeradorTeste.WinApp.ModuloQuestao
 {
     public interface IRepositorioQuestao
     {
         void Cadastrar(Questao novaQuestao);
 
-        void CadastrarVarios(List<Questao> questoes);
 
         bool Editar(int id, Questao questaoEditada);
 

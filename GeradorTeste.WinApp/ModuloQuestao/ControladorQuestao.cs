@@ -8,7 +8,7 @@ using GeradorTeste.WinApp.Compartilhado;
 using GeradorTeste.WinApp.ModuloDisciplina;
 using GeradorTeste.WinForms.ModuloDisciplina;
 
-namespace GeradorTeste.WinApp.ModuloCadastrarQuestao
+namespace GeradorTeste.WinApp.ModuloQuestao
 {
     public class ControladorQuestao : ControladorBase
     {
